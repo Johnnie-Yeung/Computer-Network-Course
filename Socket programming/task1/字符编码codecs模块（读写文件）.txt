@@ -1,0 +1,26 @@
+有时候我们爬虫或者其他方式得到一些数据写入文件时会有编码不统一的问题，所以就一般都统一转换为unicode。
+此时写入open方式打开的文件就有问题了。例如
+
+>>> line2 = u'我爱祖国'
+>>> fr.write(line2)
+
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    fr.write(line2)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-11: ordinal not in range(128)
+>>>
+
+怎么办，我们可以将上面的line2编码成str类型，但是太麻烦。我们要把得到的东西先decode为unicode再encode为str。。。
+
+input文件(gbk, utf-8...)   ----decode----->   unicode  -------encode------> output文件(gbk, utf-8...)
+
+代替这繁琐的操作就是codecs.open，例如
+
+>>> import codecs
+>>> fw = codecs.open('test1.txt','a','utf-8')
+>>> fw.write(line2)
+>>>
+
+不会报错，说明写入成功。这种方法可以指定一个编码打开文件，使用这个方法打开的文件读取返回的将是unicode。写入时，
+如果参数是unicode，则使用open()时指定的编码进行编码后写入；如果是str，则先根据源代码文件声明的字符编码，解码成unicode后
+再进行前述 操作。相对内置的open()来说，这个方法比较不容易在编码上出现问题。
