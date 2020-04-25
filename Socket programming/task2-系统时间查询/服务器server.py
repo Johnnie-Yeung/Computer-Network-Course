@@ -5,12 +5,9 @@ serverSocket = socket(AF_INET, SOCK_STREAM)  # 服务器创建欢迎套接字
 serverSocket.bind(('', serverPort))  # 将服务器的端口号与该套接字关联起来
 serverSocket.listen(1)     # 该行让服务器聆听来自客户的 TCP 连接请求。其中参数定义了请求连接的最大数（至少为 1）。
 print('The server is ready to connect.')
-print("'The client address: ('", , "', ", serverPort,')')
 while(True):
     connectionSocket, addr = serverSocket.accept()   # 创建连接套接字
     print('Accepted a new connection.')
-    print()
-    print()
     sentence = connectionSocket.recv(1024).decode()
     print('Received a request: ', sentence, '.')
     if sentence == 'Time':
