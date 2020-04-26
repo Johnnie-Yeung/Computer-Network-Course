@@ -1,8 +1,8 @@
 from socket import *
 #获取计算机名称
-hostname=socket.gethostname()
+hostname=gethostname()
 #获取本机IP
-ip=socket.gethostbyname(hostname)
+ip=gethostbyname(hostname)
 clientPort=7179  #如何在未连接前得知自己的本地端口号？
 
 serverName = 'localhost'
