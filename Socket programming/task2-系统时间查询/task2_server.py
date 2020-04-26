@@ -1,9 +1,9 @@
 from socket import *
 import datetime  # 导入时间模块，以便获取系统时间
 #获取计算机名称
-hostname=socket.gethostname()
+hostname=gethostname()
 #获取本机IP
-ip=socket.gethostbyname(hostname)
+ip=gethostbyname(hostname)
 
 serverPort = 12000
 serverSocket = socket(AF_INET, SOCK_STREAM)  # 服务器创建欢迎套接字
