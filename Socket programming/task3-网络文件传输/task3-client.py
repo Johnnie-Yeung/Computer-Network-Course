@@ -4,12 +4,12 @@ serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_STREAM)
 print('-----------------------------------')
 print('Client is running.')
-clientSocket.connect((serverName,serverPort))
-print('Connected to ', serverName, ':', serverPort, '.')
+clientSocket.connect((serverName, serverPort))
+print('Connected to ' + serverName + ':' + str(serverPort) + '.')
 filename = input('Please input a filename to request: ')
 # 向服务器发送文件名filename
 clientSocket.send(filename.encode())
-print("Send the filename '", filename, "' to the server.")
+print("Send the filename '" + filename + "' to the server.")
 print('-----------------------------------')
 
 # 判断服务器能否找到所请求的文件
@@ -34,7 +34,7 @@ else:
         data = clientSocket.recv(size)
         # 更新已接收到的数据大小
         received_size += len(data)
-        print('Received a chunk of '+ str(size) +' bytes.')
+        print('Received a chunk of ' + str(size) + ' bytes.')
         # 把接收到的数据写入文件
         file.write(data)
     file.close()
