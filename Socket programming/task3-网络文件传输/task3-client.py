@@ -34,12 +34,12 @@ else:
         data = clientSocket.recv(size)
         # 更新已接收到的数据大小
         received_size += len(data)
-        print('Received a chunk of ', size, ' bytes.')
+        print('Received a chunk of '+ str(size) +' bytes.')
         # 把接收到的数据写入文件
         file.write(data)
     file.close()
     print('-----------------------------------')
-    print("A file named '", new_filename, "' of ", received_size, ' bytes is saved.')
+    print("A file named '" + new_filename + "' of " + str(received_size) + ' bytes is saved.')
     print('Done!')
     print('-----------------------------------')
     clientSocket.close()
