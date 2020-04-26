@@ -22,10 +22,9 @@ while True:
             now_time = datetime.datetime.now().strftime('%F %T')  # strftime是格式化成我们想要的格式，%F是年-月-日，%T是时:分:秒
             connectionSocket.send(now_time.encode())
             print('Send a response: ', now_time, '.')
-            connectionSocket.close()  # 关闭连接套接字。但由于serverSocket保持打开，所以另一个客户此时能够敲门并向该服务器发送一个句子要求修改。
         elif sentence == 'Exit':
             response = 'Bye'
             connectionSocket.send(response.encode())
             print('Send a response: ', response, '.')
-            connectionSocket.close()
             break
+    connectionSocket.close()  # 关闭连接套接字
