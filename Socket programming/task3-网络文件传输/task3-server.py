@@ -12,7 +12,7 @@ connectionSocket, addr = serverSocket.accept()
 print('Accepted a new connection.')
 # 接收文件名
 filename = connectionSocket.recv(1024).decode()
-print("Received a file name '", filename, "'.")
+print("Received a filename '" + filename + "'.")
 # 检测文件是否存在
 if os.path.isfile(filename):
     # 确认找到文件
