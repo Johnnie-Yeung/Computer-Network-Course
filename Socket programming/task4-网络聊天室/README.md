@@ -12,7 +12,7 @@
 
 * GUI客户端（不做要求）
 
-  * Python的Tkinter库实现GUI界面。 https://wiki.python.org/moin/TkI nter
+  * Python的Tkinter库实现GUI界面。 https://wiki.python.org/moin/TkInter
   
   * 高级的Qt https://www.qt.io/qtfor-python   
 
