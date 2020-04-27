@@ -13,3 +13,5 @@
     4)客户端接收文件，重命名并存储在硬盘。
   
 * 要求服务器端和客户端打印交互过程。 
+
+##### Reference: https://blog.csdn.net/mouday/article/details/79101951 Python编程：socket实现文件传输
