@@ -14,13 +14,12 @@
 
   * Python的Tkinter库实现GUI界面。 https://wiki.python.org/moin/TkI nter
   
-  * 高级的Qt https://www.qt.io/qtfor-python
-  
-  
-#####【网络聊天室Q&A】
-  
-Q: 什么是群聊呢？
+  * 高级的Qt https://www.qt.io/qtfor-python   
 
+####【网络聊天室Q&A】
+  
+Q: 什么是群聊呢？  
+   
 A: 一个用户发消息，所有用户都能收到。相应地，一个客户端把聊天消息发给服务器，服务器再将收到的消息转发给所有客户端。
 
 Q: 服务器怎么知道聊天室里有哪些用户(客户端)呢？
