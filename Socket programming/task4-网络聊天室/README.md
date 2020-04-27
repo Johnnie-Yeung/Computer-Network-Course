@@ -16,7 +16,7 @@
   
   * 高级的Qt https://www.qt.io/qtfor-python   
 
-#### 【网络聊天室Q&A】
+### 【网络聊天室Q&A】
   
 Q: 什么是群聊呢？  
    
