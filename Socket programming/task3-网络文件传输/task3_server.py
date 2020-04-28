@@ -22,8 +22,18 @@ if os.path.isfile(filename):
     connectionSocket.send(str(file_size).encode())
     # 发送文件内容
     f = open(filename,'rb')
-    for line in f:
-        connectionSocket.send(line)
+    send_size = 0
+    while send_size < file_size:
+        if (file_size - send_size) > 64:  #多次接收
+            size = 64
+        else:
+            size = file_size - send_size
+        data = f.read(size)
+        connectionSocket.send(data)
+        # 更新已发送的数据大小
+        send_size += len(data)
+        print('Send a chunk of ' + str(size) + ' bytes.')
+    print('Send a file of ' + str(file_size) + ' bytes.')
     f.close()
 else:
     connectionSocket.send('Cannot find the file'.encode())
